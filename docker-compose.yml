@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  portfolio_db:
+    image: postgres:16-alpine
+    container_name: portfolio_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: portfolio_db
+      POSTGRES_USER: portfolio_user
+      POSTGRES_PASSWORD: portfolio_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - portfolio_pgdata:/var/lib/postgresql/data
+
+volumes:
+  portfolio_pgdata:

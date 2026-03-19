@@ -1,0 +1,47 @@
+.achievements__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.achievements__card {
+  text-align: center;
+  padding: 36px 28px;
+}
+
+.achievements__icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  margin-bottom: 20px;
+}
+
+.achievements__icon {
+  font-size: 1.6rem;
+  color: var(--accent-primary);
+}
+
+.achievements__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.achievements__description {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .achievements__grid {
+    grid-template-columns: 1fr;
+  }
+}
