@@ -11,7 +11,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
 
-const API_URL = 'http://localhost:5000/api';
+// Base API URL configuration supporting local development and Vercel environments
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 interface AboutData {
   name: string;
