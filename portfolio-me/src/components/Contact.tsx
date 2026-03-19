@@ -26,7 +26,8 @@ export default function Contact({ aboutData }: Props) {
     e.preventDefault();
     setStatus('sending');
     try {
-      await axios.post('http://localhost:5000/api/contact', form);
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      await axios.post(`${API_URL}/contact`, form);
       setStatus('sent');
       setForm({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 4000);
